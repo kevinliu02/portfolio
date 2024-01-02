@@ -1,0 +1,763 @@
+/*  
+
+Brownie Template
+
+http://www.templatemo.com/preview/templatemo_440_brownie
+
+COLOR CODES
+  Black #1f1d1a
+  Light Gray #929292
+  Dark Gray #2a2a2a
+  Brown #865701, rgb(134,87,1)
+  Gold #b28601, rgb(178,134,1)
+  
+TABLE OF CONTENT
+  1. Universal Styles
+  2. Header & Menu Styles
+  3. Home Styles
+  4. About & Services Styles
+  5. Contact & Footer Styles
+  6. jCarousel
+  7. Media Queries
+--------------------------------------*/
+
+button {
+  
+  width: 65.5%;
+  background: #1b1b4f;
+  border: 2px solid #000000;
+  border-radius: 30px;
+  color: #cdd1f4;
+  position: relative;
+  left: -40px; /* Move the image 50 pixels to the left */
+
+
+}
+
+button:hover {
+  background: #14143b; /* Lighter shade of the original color */
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+
+
+  
+}
+
+
+
+/* 1. Universal Styles
+--------------------------------------*/
+* { font-family: 'copperplate', fantasy; }
+body { background: url('../images/body-bg3.jpg') repeat; background-attachment: fixed; }
+h1, h2, h3 { text-transform: uppercase; }
+h2 {
+  margin-top: 0;
+  width: 100%;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0;
+}
+a:hover, a:focus { 
+  color: #e48305;
+  text-decoration: none; 
+}
+p { color: #cdd1f4; }
+ul { margin: 0; }
+
+.blue {
+	color: #6BE;
+}
+
+.green {
+	color: #6E6;
+}
+
+.col-md-6,
+.col-lg-6 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.margin-top-15 { margin-top: 15px; }
+.margin-top-30 { margin-top: 30px; }
+.padding-30 { padding: 30px; }
+.templatemo-section-title { display: block; }
+.templatemo-home-image, 
+.templatemo-image-overlay,
+.templatemo-black-bg {
+   border-radius: 30px;
+   width: 100%;
+}
+.templatemo-black-bg,
+.templatemo-content-box {
+
+  /* width of boxes for the song at the bottom */
+  width: 523px; 
+  height: 523px;
+}
+
+
+.templatemo-content-box {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:normal;
+  -webkit-flex-direction:column;
+      -ms-flex-direction:column;
+          flex-direction:column;
+          -webkit-box-align: start;
+          -webkit-align-items: flex-start;
+              -ms-flex-align: start;
+                  align-items: flex-start;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;  
+  padding: 50px;
+}
+/* IE fix */
+.templatemo-flex-item-ie-fix,
+.templatemo-content-box > * {
+  width: 100%;
+}
+.templatemo-flex-center {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.templatemo-brown { color: #e44c05; }
+
+.templatemo-gold { color: #e48305; }
+.templatemo-btn {
+  background: #e48305;
+  color: white;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.templatemo-btn:hover, .templatemo-btn:focus {
+  background: #000000; /*the send email button hover color*/
+  color: white;
+}
+.templatemo-position-relative { position: relative; }
+
+
+
+
+
+
+/* 2. Header & Menu Styles
+--------------------------------------*/
+.templatemo-site-header {
+  background: url('../images/header-bg3.jpg') repeat-x;
+  border-bottom: 2px solid #e48305;
+  height: 67px; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2000;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.templatemo-site-header.sticky { height: 47px; }
+.templatemo-site-header h1 { 
+  font-size: 60px;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease; 
+}
+.templatemo-site-header.sticky h1 { font-size: 34px; }
+.templatemo-site-name {
+  font-family: Georgia, Times, serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 30px;
+}
+.templatemo-site-name span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;      
+}
+.templatemo-site-name span:first-child { font-size: 20px; }
+.templatemo-site-header .templatemo-nav {
+  position: absolute;
+  bottom: 14px;
+  right: 0;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.templatemo-site-header.sticky .templatemo-nav { bottom: 6px; }
+.ie11 .templatemo-site-header.sticky .templatemo-nav,
+.ie10 .templatemo-site-header.sticky .templatemo-nav {
+  bottom: 7px;
+}
+
+/*
+https://stackoverflow.com/questions/952861/targeting-only-firefox-with-css/953491#953491
+*/
+@-moz-document url-prefix() { 
+    .templatemo-site-header .templatemo-nav {
+      bottom: 16px;
+      -webkit-transition: all 0.3s ease;
+              transition: all 0.3s ease;
+    }
+    .templatemo-site-header.sticky .templatemo-nav { bottom: 8px; }
+}
+.templatemo-nav ul li {
+  float: left;
+  list-style: none;
+}
+.templatemo-nav ul li a {
+  padding: 15px 20px;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.templatemo-site-header.sticky .templatemo-nav ul li a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.templatemo-nav ul li.active a {
+  background: url('../images/body-bg.jpg');
+  border-left: 1px solid #e48305; /*header buttons for about, games, ...*/
+  border-top: 1px solid #e48305;
+  border-right: 1px solid #e48305;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.templatemo-nav ul li a { color: #e85900; } /*color of header button when not hovered over*/
+#responsive-menu ul li:hover a, 
+#responsive-menu ul li.active a,
+.templatemo-nav li:hover a, 
+.templatemo-nav li.active a {
+  color: #e48305; /*color of header button when hovered over*/
+}
+.templatemo-nav li:hover a, 
+.templatemo-nav li.active a,
+a:focus {
+  text-decoration: none;
+}
+#responsive-menu {
+  top: 0;
+  width: 375px;
+  height: 100%;
+  /* transparent/50% opacity background underlay in the mobile menu  */
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 5500;
+  right: -1500px;
+  display: none;
+  overflow: auto;
+}
+#responsive-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+#responsive-menu ul li {
+  display: block;
+  margin-bottom: 2px;
+}
+
+
+
+/* the popup list of categories menu */
+#responsive-menu ul li a { 
+  padding: 15px 18px;
+  background-color: #1b1b4f;
+  color: #e48305;
+  display:block;
+  -webkit-border-radius: 4px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 40px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+
+  text-transform: uppercase;
+  
+}
+#responsive-menu ul li a i { margin-right: 10px; }
+a#mobile_menu { /*mobile menu menu box*/
+  font-size: 24px;
+  background-color: #e48305;
+  border-radius: 10px;
+  color: #1b1b4f;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 5500;
+}
+#responsive-menu ul li a:hover,
+#responsive-menu ul li.active a {
+  background: #16163f;
+  text-decoration: none;
+}
+
+/* 3. Home Styles
+--------------------------------------*/
+#home { padding-top: 197px; }
+.templatemo-home-image-container {
+  display: inline-block;
+  position: relative;
+}
+.templatemo-image-overlay {
+  background: rgba(51,51,51,0.9); /* OLD - iOS 6-, Safari 3.1-6 */
+  cursor: pointer;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;  
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          -webkit-box-pack: center;
+          justify-content: center;
+  
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          -webkit-box-align: center;
+          align-items: center;
+
+  -webkit-box-orient: vertical;  
+    -webkit-box-pack: center;
+       -ms-flex-pack: center;
+    
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.templatemo-image-overlay:hover {
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.templatemo-search-icon {
+  background: #865701;
+  border-radius: 50%;
+  font-size: 30px;
+  padding: 30px;
+  margin-bottom: 15px;
+}
+.templatemo-info-btn {
+  margin-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 150px;
+}
+
+/* 4. About & Services Styles
+Game personal projects
+--------------------------------------*/
+.templatemo-team-member-container {
+  max-width: 250px;
+  margin: 0 auto;
+}
+.tm-team-member-title {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.templatemo-member-img-container {
+  display: inline-block;
+  position: relative;
+}
+.templatemo-img-frame { position: absolute; }
+
+#k11 { padding-top: 1970px; }
+.templatemo-logo-image-container {
+  display: inline-block;
+  position: absolute;
+}
+
+.templatemo-service-image {
+  display: block;
+  float: left;
+}
+
+
+/*my skills section*/
+.templatemo-service-container { margin-top: 10px; }
+
+/*k11 logo*/
+.templatemo-service-content { margin-left: 0px; }
+h3.templatemo-service-title {
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-top: 0;
+}
+
+#k11 { padding-top: 1970px; }
+.templatemo-logo-image-container {
+  display: inline-block;
+  position: absolute;
+}
+
+/* 5. Contact & Footer Styles
+EMAIL FORM STUFF
+-------------------------------------*/
+form { width: 430px; }
+.form-control {
+  background: #1d1129;
+  border: 3px solid #000000;
+  border-radius: 30px;
+  left: -500px;
+  color: #000000;
+
+}
+.form-control:focus { border: 1px solid #000000; }
+.templatemo-send-btn {
+  background: #1d1129; /*color of the send email button*/
+  border: 3px solid #000000;
+  border-radius: 30px;
+  color: #000000;
+}
+/* http://css-tricks.com/snippets/css/style-placeholder-text/ */
+.form-control::-webkit-input-placeholder { color: #000000; }
+.form-control:-moz-placeholder { color: #000000; } /* Firefox 18- */
+.form-control::-moz-placeholder { color: #000000; } /* Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #000000; }
+
+.templatemo-social-icons-img { display: none; }
+.templatemo-social-icon { 
+  display: inline-block;
+  width: 47px;
+  height: 37px;  /*social icons height*/
+}
+#facebook { background: url('../images/social-icons.png') 0px 0; }
+#twitter { background: url('../images/social-icons.png') -51px 0; }
+#google { background: url('../images/social-icons.png') -106px 0; }
+#vimeo { background: url('../images/social-icons.png') -159px 0; }
+#flickr { background: url('../images/social-icons.png') -212px 0; }
+footer { padding-bottom: 50px; }
+.templatemo-copyright-container { padding-left: 30px; }
+
+/* 6. jCarousel http://sorgalla.com/jcarousel 
+---------------------------------------------*/
+.jcarousel-wrapper { position: relative; }
+
+/*
+This is the visible area of you carousel.
+Set a width here to define how much items are visible.
+The width can be either fixed in px or flexible in %.
+Position must be relative!
+*/
+.jcarousel {
+    position: relative;    
+    overflow: hidden;
+}
+.templatemo-team .jcarousel { width: 250px; } /*width of game project icons*/
+.templatemo-products .jcarousel { width: 220px; } /*width of team project icons*/
+/*
+This is the container of the carousel items.
+You must ensure that the position is relative or absolute and
+that the width is big enough to contain all items.
+*/
+.jcarousel ul {
+    width: 20000em;
+    position: relative;
+
+    /* Optional, required in this case since it's a <ul> element */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+These are the item elements. jCarousel works best, if the items
+have a fixed width and height (but it's not required).
+*/
+.jcarousel li {
+    /* Required only for block elements like <li>'s */
+    float: left;
+}
+
+.templatemo-team .jcarousel-control-prev { left: 0; }
+.templatemo-team .jcarousel-control-next { right: 0; }
+
+/* Height of left and right arrows*/
+
+
+.templatemo-products .jcarousel-control-prev { left: -50px; }  /*x value of left and right buttosn for team projec*/
+.templatemo-products .jcarousel-control-next { right: -50px; }
+.jcarousel-control-prev,
+.jcarousel-control-next {
+  opacity: 1;
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+}
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+    opacity: 0;
+    cursor: default;
+}
+
+/*left and right buttons*/
+@media screen and (max-width: 1199px) {
+  .templatemo-black-bg, 
+  .templatemo-content-box {
+    width: 480px;
+    height: 523px;
+  }
+}
+
+.jcarousel-control-prev, .jcarousel-control-next {
+  position: absolute;  
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  background: #e48305;
+  color: rgb(47, 18, 66);
+  text-decoration: none;
+  text-shadow: 0 0 5px #000;
+  font: 24px/27px Arial, sans-serif;
+  border-radius: 30px;
+  box-shadow: 0 0 2px #999;
+}
+.templatemo-team .jcarousel-control-prev, 
+.templatemo-team .jcarousel-control-next {
+  top: 65px; /*top set of arrows y position*/
+}
+.templatemo-products .jcarousel-control-prev,
+.templatemo-products .jcarousel-control-next {
+  top: 115px;  /* set of arrows y position*/
+}
+
+.jcarousel-control-prev:hover,
+.jcarousel-control-prev:focus,
+.jcarousel-control-next:hover,
+.jcarousel-control-next:focus {
+  color: #5c3879;
+}
+.templatemo-product-img { margin-top: 30px; }
+
+
+
+
+
+
+
+
+ Media Queries
+--------------------------------------
+@media screen and (max-width: 1199px) {
+  .templatemo-black-bg, 
+  .templatemo-content-box {
+    width: 480px;
+    height: 523px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .templatemo-site-header { height: 48px; }
+  .templatemo-site-header h1 { font-size: 35px; }
+  .templatemo-site-header .templatemo-nav { 
+    right: 10px;
+    bottom: 8px;
+  }
+  
+  @-moz-document url-prefix() {
+      .templatemo-site-header .templatemo-nav { 
+        bottom: 11px;
+      }
+  }
+  .ie11 .templatemo-site-header .templatemo-nav,
+  .ie10 .templatemo-site-header .templatemo-nav {
+    bottom: 9px;
+  }
+  .ie11 .templatemo-site-header.sticky .templatemo-nav {
+    bottom: 7px;
+  }
+
+  .templatemo-nav ul li a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  #home { padding-top: 100px; }
+  .templatemo-black-bg, 
+  .templatemo-content-box {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .templatemo-content-box {
+    height: auto;
+    padding: 15px;
+  }
+  .templatemo-section { margin-top: 50px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  .templatemo-site-header { position: static; }
+  .templatemo-nav { bottom: -6px; }
+  #home { padding-top: 200px; }
+  .templatemo-black-bg,
+  .templatemo-content-box {
+    width: 98%;
+    height: auto;
+  }
+
+  .templatemo-second-box { margin-top: 70px; }
+  .templatemo-service-container > * { text-align: center; }
+  .templatemo-service-image {
+    float: none;
+    margin: 20px auto 10px auto;
+  }
+  .templatemo-service-content {
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+
+  .templatemo-copyright-container { padding-left: 0; }
+}
+
+
+
+
+@keyframes rotateAnimation {  /*rotating animation */
+
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+
+  
+}
+
+
+
+
+/* Apply the animation to your image */
+img.rotating {
+
+  position: absolute;
+  top: -230px; /* Move the image 50 pixels up */
+  left: -170px; /* Move the image 50 pixels to the left */
+  animation: rotateAnimation 20s linear infinite;
+
+}
+
+
+
+
+
+
+
+
+
+@keyframes relativeFloatAnimation {   /*floating animation */
+  0%, 100% {
+    transform: rotate(365deg);
+  }
+  50% {
+    transform: rotate(345deg);
+  }
+}
+
+img.relativeFloating {
+  position: relative;
+
+
+  animation: relativeFloatAnimation 6s ease-in-out infinite;
+}
+
+
+
+
+
+
+
+@keyframes floatAnimation {   /*floating animation */
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+img.floating {
+  position: absolute;
+  top: -150px; /* Move the image 50 pixels up */
+  left: -100px; /* Move the image 50 pixels to the left */
+
+  animation: floatAnimation 5s ease-in-out infinite;
+}
+
+
+
+@media screen and (min-width: 1198px) {
+
+  @keyframes relativeRotatingAnimation {   /*floating animation */
+    
+    
+    
+      from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+
+  }
+
+  img.relativeRotating {
+    position: absolute;
+    top: 110px; /* Move the image 50 pixels up */
+    left: 100px; /* Move the image 50 pixels to the left */
+
+    animation: relativeRotatingAnimation 50s ease infinite;
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 1198px) {
+  img.relativeRotating {
+    display: none; 
+  }
+
+}
+
+
+@media screen and (max-width: 767px) {
+
+  img.relativeFloating {
+    display: none; 
+  }
+}
